@@ -1,3 +1,3 @@
-import CustomComponent from './src/custom-component';
+import PinInput from './src/pin-input';
 
-export default CustomComponent;
+export default PinInput;
