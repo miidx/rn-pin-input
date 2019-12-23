@@ -1,15 +1,22 @@
 # rn-pin-input
-A React Native pin-input component with time count down. This component will always show empty 6 pin-input field to be filled later by user.
+A React Native pin-input component with time count down. This component will always show empty six pin-input field to be filled later by user.
 
 ![](pin-input.gif)
+
+
+## Installation
+
+```
+    npm i @miidx/rn-pin-input
+```
 
 
 ## Usage
 
 ```jsx
     <PinInput
-        value='123456'
-        onTextChanged={input => { console.log(input); }}
+        value="123456"
+        onTextChanged={text => { console.log(text); }}
         pinExpirationDate="2019-12-19T17:32+07:00"
         onPinExpired={() => { console.log('Time is up!'); }}
         countdownLabel={'PIN will expire in'}
@@ -28,7 +35,7 @@ A React Native pin-input component with time count down. This component will alw
  onTextChanged           | Callback when text on pin-input field changed                          | function  | yes          |           
  pinExpirationDate         | Expiring pin time value in complete ISO-8601 date time format `YYYY-MM-DDTHH:mmZ`. `YYYY` is 4 digit year, `MM` is month number, `DD` is day of month, `HH` is hours in 24 hour time, `mm` is minutes, and `Z` is offset from UTC time, such as `+-HH:mm`. Adding seconds `s` and fractional seconds `SS` are optional                        | string  | yes          |           
  textStyle          | Style of pin text inside component                  | object   | no          | `{}`          
- value  | Complete value of pin input    | string   | yes          |        
+ value  | Complete number value of pin input    | string   | yes          |        
 
 
 ```
