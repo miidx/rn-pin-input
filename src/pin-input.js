@@ -32,6 +32,7 @@ const styles = {
   },
   expiredInfoContainer: {
     marginBottom: 10,
+    fontSize: 14,
     alignItems: 'center',
   },
 };
@@ -70,7 +71,7 @@ const renderTextInput = (arr, value, onTextChanged,
 ));
 
 const renderCountdown = (pinExpirationDate, expiringLabel, countdownLabel, onPinExpired) => {
-  if (pinExpirationDate) {
+  if (pinExpirationDate === '') {
     return (
       <Text style={[styles.expiredInfoContainer, { marginTop: 10 }]}>
         {expiringLabel}
