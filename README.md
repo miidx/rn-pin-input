@@ -1,16 +1,25 @@
-# Component Name
-Write the component overview here
+# rn-pin-input
+A React Native pin-input component with time count down. This component will always show empty six pin-input field to be filled later by user.
+
+![](pin-input.gif)
+
+
+## Installation
+
+```
+    npm i @miidx/rn-pin-input
+```
 
 
 ## Usage
 
 ```jsx
-    <ComponentName
-        caption="Submit"
-        onPress={somefunction}
-        bold
-        italic
-        color="#00f"
+    <PinInput
+        value="123456"
+        onTextChanged={text => { console.log(text); }}
+        pinExpirationDate="2019-12-19T17:32+07:00"
+        onPinExpired={() => { console.log('Time is up!'); }}
+        countdownLabel={'PIN will expire in'}
     />
 ```
 
@@ -18,13 +27,15 @@ Write the component overview here
 
  Name           | Description                                 | Type     | Required  | Default value   
 :---------------|:------------------------------------------- |:---------|:---------:|:--------------
- caption        | Caption of the component                    | string   | yes       |           
- disabled       | Make the component disabled                 | boolean  |           | false          
- onPress        | Callback when the component is pressed      | function | yes       |           
- bold           | Make the text bold                          | boolean  |           | false          
- italic         | Make the text italic                        | boolean  |           | false          
- color          | The color of the component                  | string   |           | `#2f2f2f`          
- disabledColor  | The color when the component is disabled    | string   |           | `#8C8C8C`        
+ containerStyle        | Style of text input field container                    | object   | no       | `{}`          
+ contentContainerStyle       | Style of each pin-input container                 | object  | no          | `{}`          
+ countdownLabel       | Text shown beside time count down                 | string  | no          | `''`          
+ expiringLabel       | Text shown after reach end time of count down                 | string  | no          | `'Pin has expired'`          
+ onPinExpired        | Callback called when pin has expired      | function | yes       |           
+ onTextChanged           | Callback when text on pin-input field changed                          | function  | yes          |           
+ pinExpirationDate         | Expiring pin time value in complete ISO-8601 date time format `YYYY-MM-DDTHH:mmZ`. `YYYY` is 4 digit year, `MM` is month number, `DD` is day of month, `HH` is hours in 24 hour time, `mm` is minutes, and `Z` is offset from UTC time, such as `+-HH:mm`. Adding seconds `s` and fractional seconds `SS` are optional                        | string  | yes          |           
+ textStyle          | Style of pin text inside component                  | object   | no          | `{}`          
+ value  | Complete number value of pin input    | string   | yes          |        
 
 
 ```
@@ -33,15 +44,5 @@ Write the component overview here
 ```
 
 
-## Note:
-After cloning this repo, don't forget to edit these files:
-
-1. Edit these fields inside `package.json` file
-   - name
-   - description
-   - url for `repository`, `bugs`, and `homepage`
-   - author
-
-2. Edit component name inside `index.js` file.
-3. Edit component name inside `src/custom-component.js` file.
-4. Rename `src/custom-component.js` file appropriately.
+### Note:
+* This package use `rn-count-down` component for its count down timer to read the documentation, [click here](https://github.com/miidx/rn-count-down "rn-count-down").
