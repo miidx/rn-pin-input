@@ -83,7 +83,6 @@ const renderCountdown = (pinExpirationDate, expiringLabel, countdownLabel, onPin
       label={countdownLabel}
       endTime={pinExpirationDate}
       onTimeIsUp={() => onPinExpired()}
-      {...props}
     />
   );
 };
