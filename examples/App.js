@@ -20,11 +20,11 @@ const App: () => React$Node = () => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <PinInput
-          value="123456"
+          value={'123456'}
           onTextChanged={input => { console.log(input); }}
           pinExpirationDate="2019-12-19T17:32+07:00"
           onPinExpired={() => { console.log('Time is up!'); }}
-          countdownLabel={'PIN will expire in'}
+           countdownLabel={'PIN will expire in'}
         />
         </SafeAreaView>
     </>
