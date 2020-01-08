@@ -15,8 +15,8 @@ A React Native pin-input component with time count down. This component will alw
 
 ```jsx
     <PinInput
-        value="123456"
-        onTextChanged={text => { console.log(text); }}
+        value={'123456'}
+        onTextChanged={input => { console.log(input); }}
         pinExpirationDate="2019-12-19T17:32+07:00"
         onPinExpired={() => { console.log('Time is up!'); }}
         countdownLabel={'PIN will expire in'}
